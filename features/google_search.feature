@@ -4,10 +4,10 @@ Feature: Do a Google Search
 
   Scenario: Google Search
     Given I visit http://google.com
-    When I enter 'cheese' into 'gbqfq'
+    When I enter 'cheese' into 'lst-ib'
     Then I should see search results
 
   Scenario: Google Search
     Given I visit http://google.com
-    When I enter 'hamburgers' into 'gbqfq'
+    When I enter 'hamburgers' into 'lst-ib'
     Then I should see search results

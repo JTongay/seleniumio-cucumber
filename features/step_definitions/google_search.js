@@ -50,19 +50,31 @@ defineSupportCode(function({Before, Given, When, Then}) {
   Given('I visit http://google.com', function() {
     client
       .init()
-      .url('https://duckduckgo.com/')
+      .url('https://google.com/')
       .end()
   });
 
-  When('I enter {stringInSingleQuotes} into {stringInSingleQuotes}', function (text) {
-    this.driver.findElement({linkText: text}).then(function(element) {
-      return element.click();
-    });
+  When('I enter {stringInSingleQuotes} into {stringInSingleQuotes}', function (text1, text2) {
+    // this.driver.findElement({linkText: text}).then(function(element) {
+    //   return element.click();
+    // });
+    client
+      .setValue(text2, text1)
+      .submitForm("input[value]='Google Search'")
+      .end()
+
+    console.log("booyah");
+
   });
 
   Then('I should see search results', function (text) {
-    var xpath = "//*[contains(text(),'" + text + "')]";
-    var condition = seleniumWebdriver.until.elementLocated({xpath: xpath});
-    this.driver.wait(condition, 5000);
+    // var xpath = "//*[contains(text(),'" + text + "')]";
+    // var condition = seleniumWebdriver.until.elementLocated({xpath: xpath});
+    // this.driver.wait(condition, 5000);
+    client
+      .getTitle(function(title){
+        console.log("title is:" + title);
+      })
+      .end()
   });
 });
