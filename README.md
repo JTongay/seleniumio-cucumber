@@ -4,6 +4,7 @@
 - It's a testing framework where you can basically put in plain old english (with certain syntax) and write tests in another framework in conjunction with Cucumber.
 - You write out each test (feature) in a .feature file.
 - Here's an example
+
 >Feature: Serve coffee
   Coffee should not be served until paid for
   Coffee should not be served until the button has been pressed
@@ -14,5 +15,5 @@
   And I have deposited 1$
   When I press the coffee button
   Then I should be served a coffee
-  
+
 - This looks like plain english.
