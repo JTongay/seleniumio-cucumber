@@ -1,6 +1,6 @@
 #Notes on the Cucumber/SeleniumIO stuffs.
 
-#WTF IS CUCUMBER??
+###WTF IS CUCUMBER??
 - It's a testing framework where you can basically put in plain old english (with certain syntax) and write tests in another framework in conjunction with Cucumber.
 - You write out each test (feature) in a .feature file.
 - Here's an example
@@ -19,3 +19,6 @@ Scenario: Buy last coffee
 ```
 
 - This looks like plain english.
+
+###WTF IS WEBDRIVERIO??
+- Essentially, it lets you control a browser in a few lines of code.
