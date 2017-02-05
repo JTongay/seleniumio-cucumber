@@ -59,6 +59,8 @@ defineSupportCode(function({Before, Given, When, Then}) {
     //   return element.click();
     // });
     client
+      .init()
+      .url('https://google.com/')
       .setValue(text2, text1)
       .submitForm("input[value]='Google Search'")
       .end()
@@ -71,10 +73,13 @@ defineSupportCode(function({Before, Given, When, Then}) {
     // var xpath = "//*[contains(text(),'" + text + "')]";
     // var condition = seleniumWebdriver.until.elementLocated({xpath: xpath});
     // this.driver.wait(condition, 5000);
+    console.log(text);
+    var testing = client.getText('.r')
+    console.log(testing);
     client
-      .getTitle(function(title){
-        console.log("title is:" + title);
-      })
-      .end()
+    .init()
+    .url('https://google.com/')
+    .getText('.r')
+    .end()
   });
 });
